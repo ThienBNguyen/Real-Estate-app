@@ -1,11 +1,10 @@
-import '../styles/globals.css'
-import Router from 'next/router'
-import Head from 'next/head'
-import NProgress from 'nprogress'
+import Router from 'next/router';
+import Head from 'next/head';
+import NProgress from 'nprogress';
+import { ChakraProvider } from '@chakra-ui/react';
 
-import { ChakraProvider } from '@chakra-ui/react'
+import Layout from '../components/Layout';
 
-import Layout from '../components/Layout'
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
 
@@ -16,6 +15,7 @@ function MyApp({ Component, pageProps }) {
   Router.events.on('routeChangeComplete', () => {
     NProgress.done();
   });
+
   return (
     <>
       <Head>
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         </Layout>
       </ChakraProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
